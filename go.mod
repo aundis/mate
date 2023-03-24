@@ -1,3 +1,3 @@
-module github.com/aundis/mate
+module github.com/aundis/meta
 
 go 1.19
