@@ -1,35 +1,35 @@
-package mate
+package meta
 
 type Slot struct{}
 
 type Listen struct{}
 
-type ObjectMate struct {
+type ObjectMeta struct {
 	Name      string          `json:"name"`
 	Kind      string          `json:"kind"`
-	Functions []*FunctionMate `json:"functions"`
+	Functions []*FunctionMeta `json:"functions"`
 }
 
-type FunctionMate struct {
+type FunctionMeta struct {
 	Name       string
-	Parameters []*FieldMate
-	Results    []*FieldMate
+	Parameters []*FieldMeta
+	Results    []*FieldMeta
 }
 
-type FieldMate struct {
+type FieldMeta struct {
 	Name    string        `json:"name"`
 	Kind    string        `json:"kind"`
 	Type    string        `json:"type"`
-	Imports []*ImportMate `json:"imports"`
-	Raws    []*CodeMate   `json:"raws"`
+	Imports []*ImportMeta `json:"imports"`
+	Raws    []*CodeMeta   `json:"raws"`
 }
 
-type ImportMate struct {
+type ImportMeta struct {
 	Path  string `json:"path"`
 	Alias string `json:"alias"`
 }
 
-type CodeMate struct {
+type CodeMeta struct {
 	Name string `json:"name"`
 	From string `json:"from"`
 	Code string `json:"code"`
