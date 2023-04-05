@@ -17,20 +17,20 @@ type FunctionMeta struct {
 }
 
 type FieldMeta struct {
-	Name    string        `json:"name"`
-	Kind    string        `json:"kind"`
-	Type    string        `json:"type"`
-	Imports []*ImportMeta `json:"imports"`
-	Raws    []*CodeMeta   `json:"raws"`
+	Name      string      `json:"name"`
+	Type      string      `json:"type"`
+	TypeMetas []*TypeMeta `json:"typeMetas"`
+}
+
+type TypeMeta struct {
+	Id     string      `json:"id"`
+	Name   string      `json:"name"`
+	From   string      `json:"from"`
+	Code   string      `json:"code"`
+	Import *ImportMeta `json:"imports"`
 }
 
 type ImportMeta struct {
 	Path  string `json:"path"`
 	Alias string `json:"alias"`
-}
-
-type CodeMeta struct {
-	Name string `json:"name"`
-	From string `json:"from"`
-	Code string `json:"code"`
 }
